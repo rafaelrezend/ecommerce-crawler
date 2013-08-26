@@ -48,7 +48,7 @@ public class Main {
 			System.out.println("price image link: " + matchPriceImage.group(1));
 		}
 		
-		OCRModule.readImage();
+		System.out.println("price: " + OCRModule.readImage());;
 		
 //		<b>Unser Preis:</b></span> <img src="http://www.musik-produktiv.ch/shop/Preis.aspx?artikel_id=122132&amp;format=redit14" alt="Preis" style="margin-bottom:-5px;" />
 		
