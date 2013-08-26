@@ -46,14 +46,14 @@ public class Main {
 		Matcher matchPriceImage = pattPriceImage.matcher(urlContent);
 		while (matchPriceImage.find()){
 			System.out.println("price image link: " + matchPriceImage.group(1));
+			String link = matchPriceImage.group(1).replaceAll("&amp;", "&");
+			System.out.println("price image link: " + link);
+			
+			System.out.println("price: " + OCRModule.readImage(link));
 		}
-		
-		System.out.println("price: " + OCRModule.readImage());;
 		
 //		<b>Unser Preis:</b></span> <img src="http://www.musik-produktiv.ch/shop/Preis.aspx?artikel_id=122132&amp;format=redit14" alt="Preis" style="margin-bottom:-5px;" />
 		
-
-
 	}
 
 }
