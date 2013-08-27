@@ -20,6 +20,9 @@ import net.sourceforge.tess4j.Tesseract;
 import net.sourceforge.tess4j.TesseractException;
 
 /**
+ * This class provides the necessary methods to read the text content of simple
+ * images using the tesseract library.
+ * 
  * @author Rafael Rezende
  * 
  */
@@ -65,14 +68,15 @@ public final class OCRModule {
 		Double price = null;
 
 		try {
-			
+
 			// buffer that holds the image from url
 			BufferedImage priceImg = ImageIO.read(url);
-			
-			// preventive for too small figures (invalid values) returned from the url
+
+			// preventive for too small figures (invalid values) returned from
+			// the url
 			if (priceImg.getWidth() < 20 || priceImg.getHeight() < 20)
 				return 0.0;
-			
+
 			// buffer that holds the scaled image
 			BufferedImage scaledPriceImg = new BufferedImage(
 					priceImg.getWidth() * SCALE, priceImg.getHeight() * SCALE,
@@ -95,7 +99,7 @@ public final class OCRModule {
 
 			// run the Tesseract OCR to get the text from the image
 			String priceStr = instance.doOCR(scaledPriceImg);
-			
+
 			// get the german number format due to comma
 			NumberFormat format = NumberFormat.getInstance(Locale.GERMAN);
 			price = format.parse(priceStr).doubleValue();
@@ -113,7 +117,7 @@ public final class OCRModule {
 
 		return price;
 	}
-	
+
 	/**
 	 * Get value from the price image. This image must be scaled before running
 	 * through Tesseract. Options are available as constants above.
@@ -123,7 +127,7 @@ public final class OCRModule {
 	 * @return the value read in the price image.
 	 */
 	public static Double readImage(String urlStr) {
-		
+
 		URL url = null;
 		try {
 			// create URL from string
@@ -133,10 +137,11 @@ public final class OCRModule {
 			e.printStackTrace();
 		}
 		// if the URL is invalid, return null
-		if (url == null) return null;
-		
+		if (url == null)
+			return null;
+
 		// else return the readImage(url) accordingly
 		return readImage(url);
-		
+
 	}
 }
