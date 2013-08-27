@@ -1,9 +1,10 @@
 package rezend.musix;
 
 import rezend.musix.constants.Regex;
-import rezend.musix.tool.ContentParser;
-import rezend.musix.tool.OCRModule;
-import rezend.musix.tool.URLReader;
+import rezend.musix.core.Product;
+import rezend.musix.tools.ContentParser;
+import rezend.musix.tools.OCRModule;
+import rezend.musix.tools.URLReader;
 
 /**
  * Preferably open-source libraries
@@ -33,5 +34,7 @@ public class Main {
 		String priceLink = ContentParser.parseContent(urlContent, Regex.M_PRODUKTIV_PRICE_LINK);
 		double price = OCRModule.readImage(priceLink);
 		System.out.println(price);
+		
+		Product prod = new Product(Integer.parseInt(id), product, price);
 	}
 }
