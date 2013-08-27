@@ -21,5 +21,6 @@ public final class ErrorCodes {
 	public final static String NO_CONN_AVAILABLE = "ERROR! There is no open connection to database!";
 	public final static String ADD_PRODUCT_FAILURE = "ERROR! Failure adding to database!";
 	public final static String SELECT_PRODUCT_FAILURE = "ERROR! Failure retrieving data from database!";
+	public final static String CREATE_TABLE_FAILURE = "ERROR! Failure creating table!";
 
 }

@@ -15,6 +15,9 @@ import rezend.musix.constants.ErrorCodes;
  * select all products from database. For more complex systems, other ORMs and
  * persistence solutions could be explored.
  * 
+ * This DAO assumes that the proper permissions were already given to the
+ * specified user for the given database.
+ * 
  * @author Rafael Rezende
  * 
  */
@@ -35,13 +38,18 @@ public class ProductDAO {
 	 * Serialize object content into DB. Insert operations for an existing key
 	 * will update product name and price (ON DUPLICATE KEY)
 	 */
-	private static final String ECOMM_INSERT = "INSERT INTO ecomm_schema.product(id, name, price) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE price=VALUES(price), name=VALUES(name)";
+	private static final String ECOMM_INSERT = "INSERT INTO ecomm_schema.products(id, name, price) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE price=VALUES(price), name=VALUES(name)";
 	/**
 	 * Deserialize object from DB. This query selects all items from the product
 	 * table. New or a more general queries should be created for a dynamic
 	 * request.
 	 */
-	private static final String ECOMM_SELECT = "SELECT id, name, price FROM ecomm_schema.product";
+	private static final String ECOMM_SELECT = "SELECT id, name, price FROM ecomm_schema.products";
+	/**
+	 * Create table if it does not exist. Warning: User permission required in
+	 * the current database!
+	 */
+	private static final String ECOMM_CREATE_TABLE = "CREATE TABLE IF NOT EXISTS ecomm_schema.Products(id INT NOT NULL, name VARCHAR(200) NOT NULL, price FLOAT NOT NULL, PRIMARY KEY (id))";
 
 	/**
 	 * This function attempts to connect to the database if there is no existing
@@ -65,7 +73,28 @@ public class ProductDAO {
 			}
 			;
 		}
+
+		// attempt to create table when connection is created
+		createProductTable();
+
 		return true;
+	}
+
+	/**
+	 * Create table "products" if it does not exist.
+	 */
+	public static void createProductTable() {
+
+		try {
+			PreparedStatement statement = connection.prepareStatement(
+					ECOMM_CREATE_TABLE, Statement.RETURN_GENERATED_KEYS);
+			// execute query
+			statement.executeUpdate();
+			statement.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.err.println(ErrorCodes.CREATE_TABLE_FAILURE);
+		}
 	}
 
 	/**
