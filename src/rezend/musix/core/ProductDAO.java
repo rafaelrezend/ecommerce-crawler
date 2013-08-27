@@ -1,4 +1,4 @@
-package rezend.musix.tools;
+package rezend.musix.core;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,7 +8,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import rezend.musix.constants.ErrorCodes;
-import rezend.musix.core.Product;
 
 /**
  * This class holds all transactions to the MySQL database, including the
@@ -19,7 +18,7 @@ import rezend.musix.core.Product;
  * @author Rafael Rezende
  * 
  */
-public class DBTransaction {
+public class ProductDAO {
 
 	/** MySQL driver */
 	private final static String DRIVER = "com.mysql.jdbc.Driver";
@@ -75,7 +74,7 @@ public class DBTransaction {
 	 * @param prod
 	 *            Product to add to the database.
 	 */
-	public static void addProductToDB(Product prod) {
+	public static void addProduct(Product prod) {
 
 		// check if there is an existing connection
 		if (connection == null) {
@@ -106,7 +105,7 @@ public class DBTransaction {
 	 * 
 	 * @return a ResultSet containing all products.
 	 */
-	public static ResultSet fetchProductsFromDB() {
+	public static ResultSet fetchProducts() {
 
 		// holds all products from DB
 		ResultSet result = null;
@@ -127,10 +126,10 @@ public class DBTransaction {
 	/**
 	 * Fetchs the products from database and print them to the system output.
 	 */
-	public static void printProductsFromDB() {
+	public static void printProducts() {
 
 		// fetch products from DB
-		ResultSet result = fetchProductsFromDB();
+		ResultSet result = fetchProducts();
 
 		// check if the fetching has failed
 		if (result == null) {
