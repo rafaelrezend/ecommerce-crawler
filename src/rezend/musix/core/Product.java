@@ -19,9 +19,9 @@ public class Product {
 	}
 
 	/**
-	 * @param id
-	 * @param name
-	 * @param price
+	 * @param id Product unique ID
+	 * @param name Product title/name
+	 * @param price Product price
 	 */
 	public Product(int id, String name, double price) {
 		super();
