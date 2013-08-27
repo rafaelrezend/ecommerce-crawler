@@ -47,7 +47,7 @@ public final class OCRModule {
 	 * AffineTransformOp.TYPE_BILINEAR and
 	 * AffineTransformOp.TYPE_NEAREST_NEIGHBOR.
 	 */
-	static final int AFFINE_TRANSFORMATION_TYPE = AffineTransformOp.TYPE_NEAREST_NEIGHBOR;
+	static final int AFFINE_TRANSFORMATION_TYPE = AffineTransformOp.TYPE_BICUBIC;
 
 	/**
 	 * Singleton instance of Tesseract.
