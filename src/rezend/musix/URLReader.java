@@ -74,7 +74,7 @@ public final class URLReader {
 		try {
 			// complete the url with "http://" in case the given one does not
 			// provide the protocol (https, ftp etc)
-			if (!urlStr.toLowerCase().matches("://")) {
+			if (!urlStr.toLowerCase().contains("://")) {
 				urlStr = "http://" + urlStr;
 			}
 

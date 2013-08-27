@@ -62,7 +62,7 @@ public final class OCRModule {
 	 *            URL of the image
 	 * @return the value read in the price image.
 	 */
-	public static Double readImage(URL url) {
+	public static double readImage(URL url) {
 
 		// product price
 		Double price = null;
@@ -126,19 +126,25 @@ public final class OCRModule {
 	 *            URL String of the image
 	 * @return the value read in the price image.
 	 */
-	public static Double readImage(String urlStr) {
-
+	public static double readImage(String urlStr) {
+		
 		URL url = null;
 		try {
+			// complete the url with "http://" in case the given one does not
+			// provide the protocol (https, ftp etc)
+			if (!urlStr.toLowerCase().contains("://")) {
+				urlStr = "http://" + urlStr;
+			}
+			
 			// create URL from string
 			url = new URL(urlStr);
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		// if the URL is invalid, return null
+		// if the URL is invalid, return -1
 		if (url == null)
-			return null;
+			return -1.0;
 
 		// else return the readImage(url) accordingly
 		return readImage(url);
