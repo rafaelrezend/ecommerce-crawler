@@ -3,6 +3,7 @@ package rezend.musix;
 import rezend.musix.constants.Regex;
 import rezend.musix.core.Product;
 import rezend.musix.tools.ContentParser;
+import rezend.musix.tools.DBTransaction;
 import rezend.musix.tools.OCRModule;
 import rezend.musix.tools.URLReader;
 
@@ -36,5 +37,9 @@ public class Main {
 		System.out.println(price);
 		
 		Product prod = new Product(Integer.parseInt(id), product, price);
+		
+		DBTransaction.connect();
+		DBTransaction.addProductToDB(prod);
+		DBTransaction.printProductsFromDB();
 	}
 }
