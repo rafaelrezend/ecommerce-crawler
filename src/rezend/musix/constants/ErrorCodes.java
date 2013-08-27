@@ -1,7 +1,7 @@
 /**
  * 
  */
-package rezend.musix;
+package rezend.musix.constants;
 
 /**
  * @author Rafael Rezende

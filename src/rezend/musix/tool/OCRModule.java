@@ -1,7 +1,7 @@
 /**
  * 
  */
-package rezend.musix;
+package rezend.musix.tool;
 
 import java.awt.Graphics2D;
 import java.awt.geom.AffineTransform;

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package rezend.musix;
+package rezend.musix.tool;
 
 import java.io.BufferedReader;
 import java.io.IOException;

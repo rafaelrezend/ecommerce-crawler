@@ -6,7 +6,7 @@ package rezend.musix.tool;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import rezend.musix.ErrorCodes;
+import rezend.musix.constants.ErrorCodes;
 
 /**
  * This class is used to parse the content of a String using regular expression.
