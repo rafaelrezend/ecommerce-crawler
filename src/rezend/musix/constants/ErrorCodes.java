@@ -14,9 +14,10 @@ package rezend.musix.constants;
 public final class ErrorCodes {
 
 	// Warning messages
-	public final static String MULTIPLE_MATCH = "Warning! Multiple matches for the current regex. Please provide a more specific regex.";
+	public final static String MULTIPLE_MATCH_FOUND = "Warning! Multiple matches for the current regex. Please provide a more specific regex.";
 
 	// Error messages
+	public final static String NO_MATCH_FOUND = "ERROR! No match for this regex.";
 	public final static String DB_CONN_FAILED = "ERROR! Error connecting to MySQL database!";
 	public final static String NO_CONN_AVAILABLE = "ERROR! There is no open connection to database!";
 	public final static String ADD_PRODUCT_FAILURE = "ERROR! Failure adding to database!";
