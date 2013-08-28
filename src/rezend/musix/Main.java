@@ -52,9 +52,9 @@ public class Main {
 		}
 
 		/* example of how a product is processed and stored */
-		// prod = ProductParser
-		// .parseProductFromURL("http://www.musik-produktiv.ch/rohema-44-cm.aspx");
-		// ProductDAO.addProduct(prod);
+//		 Product prod = ProductParser
+//		 .parseProductFromURL("http://www.musik-produktiv.ch/audio-technica-m3-in-ear-system.aspx");
+//		 ProductDAO.addProduct(prod);
 		
 		ProductDAO.printProducts();
 	}

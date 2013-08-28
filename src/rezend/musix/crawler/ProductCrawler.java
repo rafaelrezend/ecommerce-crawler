@@ -56,7 +56,7 @@ public class ProductCrawler extends WebCrawler {
 
 		// get its own URL
 		String url = page.getWebURL().getURL();
-		System.out.println("URL: " + url);
+		System.out.println("Adding URL to list: " + url);
 
 		// get the singleton instance of the ProductList
 		LinksList pl = LinksList.getInstance();
