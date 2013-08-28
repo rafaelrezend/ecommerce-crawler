@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DecimalFormat;
 
 import rezend.musix.constants.ErrorCodes;
 
@@ -171,11 +172,14 @@ public class ProductDAO {
 		try {
 			// print products
 			while (result.next()) {
-				String id = result.getString("id");
+				int id = result.getInt("id");
 				String name = result.getString("name");
-				String price = result.getString("price");
+				double price = result.getDouble("price");
+				
+				DecimalFormat df = new DecimalFormat("#.00");
+				
 				System.out.println("Product id: " + id + " - " + name
-						+ " - price: " + price);
+						+ " - price: " + df.format(price));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
