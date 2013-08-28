@@ -114,6 +114,8 @@ public class ProductDAO {
 		try {
 			PreparedStatement statement = connection.prepareStatement(
 					ECOMM_INSERT, Statement.RETURN_GENERATED_KEYS);
+			
+			System.out.println("Adding Product to DB: " + prod.getName());
 
 			// complete statement with Product fields
 			statement.setInt(1, prod.getId());

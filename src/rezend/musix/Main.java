@@ -15,7 +15,8 @@ import rezend.musix.crawler.CrawlerControl;
  * 
  * Since it depends on OCR to obtain the relevant data, the success rate depends
  * on the quality of the graphics representing the values. This way, the
- * efficiency of this application cannot be fully guaranteed.
+ * efficiency of this application cannot be fully guaranteed. Fine-tunning may
+ * be required.
  * 
  * Crawler+producer and consumer are executed in different threads. They can run
  * indefinitely. However, a limit of products is set so that the application can
@@ -38,9 +39,9 @@ public class Main {
 
 		// starts the web crawler in parallel
 		CrawlerControl.startCrawler();
-		
+
 		// routine to consume the links from the list of links
-		for (int productCounter = 0; productCounter < 100;) {
+		for (int productCounter = 0; productCounter < 200;) {
 			String urlStr = pList.get();
 			Product prod = ProductParser.parseProductFromURL(urlStr);
 			if (prod == null)
@@ -52,10 +53,14 @@ public class Main {
 		}
 
 		/* example of how a product is processed and stored */
-//		 Product prod = ProductParser
-//		 .parseProductFromURL("http://www.musik-produktiv.ch/audio-technica-m3-in-ear-system.aspx");
-//		 ProductDAO.addProduct(prod);
+		// Product prod = ProductParser
+		// .parseProductFromURL("http://www.musik-produktiv.ch/audio-technica-m3-in-ear-system.aspx");
+		// ProductDAO.addProduct(prod);
+
+		System.out.println("\nPrint values from the database:\n");
 		
 		ProductDAO.printProducts();
+		
+		System.exit(0);
 	}
 }
