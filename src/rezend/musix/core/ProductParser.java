@@ -15,7 +15,7 @@ import rezend.musix.tools.URLReader;
  * @author Rafael Rezende
  * 
  */
-public final class ProductParser {
+public final class ProductParser{
 	
 	public static Product parseProductFromURL(String urlStr){
 		
@@ -23,13 +23,17 @@ public final class ProductParser {
 		String urlContent = URLReader
 				.getURLContent(urlStr);
 		
-		// retrieve product name
-		String product = ContentParser.parseContent(urlContent,
-				Regex.M_PRODUKTIV_PRODUCT);
-
 		// retrieve product id
 		String id = ContentParser
 				.parseContent(urlContent, Regex.M_PRODUKTIV_ID);
+		
+		// if id is null, then no product has been found in this page
+		if (id == null)
+			return null;
+		
+		// retrieve product name
+		String product = ContentParser.parseContent(urlContent,
+				Regex.M_PRODUKTIV_PRODUCT);
 
 		// retrieve product price link
 		String priceLink = ContentParser.parseContent(urlContent,
@@ -40,7 +44,5 @@ public final class ProductParser {
 
 		// return the respective Product
 		return new Product(Integer.parseInt(id), product, price);
-		
 	}
-
 }

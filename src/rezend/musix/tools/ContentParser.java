@@ -40,17 +40,16 @@ public final class ContentParser {
 		// create a matcher from the given pattern for the URL content
 		Matcher matcher = pattProduct.matcher(urlContent);
 
-		// find the first pattern match
-		matcher.find();
+		// find the first pattern match and return null if nothing has been found
+		if (!matcher.find()){
+			return null;
+		}
 
-		// extract the value in between (.*?)
-		String result = matcher.group(1);
-
-		// there should be only one valid match in a given page. If more than
-		// one match is found, then a warning is raised
-		if (matcher.find())
-			System.err.println(ErrorCodes.MULTIPLE_MATCH);
-
-		return result;
+		// check if there are multiple matches and raise warning
+		if (matcher.groupCount() > 1)
+			System.err.println(ErrorCodes.MULTIPLE_MATCH_FOUND);
+		
+		// return the value in between (.*?)
+		return matcher.group(1);
 	}
 }
