@@ -41,7 +41,7 @@ public class Main {
 		CrawlerControl.startCrawler();
 
 		// routine to consume the links from the list of links
-		for (int productCounter = 0; productCounter < 200;) {
+		for (int productCounter = 0; productCounter < 10;) {
 			String urlStr = pList.get();
 			Product prod = ProductParser.parseProductFromURL(urlStr);
 			if (prod == null)
