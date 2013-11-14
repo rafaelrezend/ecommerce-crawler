@@ -41,7 +41,7 @@ public class ProductCrawler extends WebCrawler {
 	public boolean shouldVisit(WebURL url) {
 		String href = url.getURL().toLowerCase();
 		return !FILTERS.matcher(href).matches()
-				&& href.startsWith("http://www.musik-produktiv.ch/");
+				&& href.startsWith("http://rafaelrezend.github.io/");
 	}
 
 	/*
