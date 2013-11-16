@@ -1,7 +1,7 @@
 /**
  * 
  */
-package rezend.music.core;
+package rezend.ecomm.core;
 
 /**
  * Class to represent products from the website.

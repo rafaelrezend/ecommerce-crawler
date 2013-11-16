@@ -1,4 +1,4 @@
-package rezend.music.crawler;
+package rezend.ecomm.crawler;
 
 import edu.uci.ics.crawler4j.crawler.CrawlConfig;
 import edu.uci.ics.crawler4j.crawler.CrawlController;

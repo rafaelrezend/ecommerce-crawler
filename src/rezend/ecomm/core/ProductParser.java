@@ -1,12 +1,12 @@
 /**
  * 
  */
-package rezend.music.core;
+package rezend.ecomm.core;
 
-import rezend.music.constants.Regex;
-import rezend.music.tools.ContentParser;
-import rezend.music.tools.OCRModule;
-import rezend.music.tools.URLReader;
+import rezend.ecomm.constants.Regex;
+import rezend.ecomm.tools.ContentParser;
+import rezend.ecomm.tools.OCRModule;
+import rezend.ecomm.tools.URLReader;
 
 /**
  * This class uses the ContentParser to retrieve all relevant information from

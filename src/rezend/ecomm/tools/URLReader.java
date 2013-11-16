@@ -1,7 +1,7 @@
 /**
  * 
  */
-package rezend.music.tools;
+package rezend.ecomm.tools;
 
 import java.io.BufferedReader;
 import java.io.IOException;
