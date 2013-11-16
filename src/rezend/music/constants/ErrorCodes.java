@@ -1,7 +1,7 @@
 /**
  * 
  */
-package rezend.ecomm.constants;
+package rezend.music.constants;
 
 /**
  * This class holds the warning and error messages of the application. It should

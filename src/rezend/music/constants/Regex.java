@@ -1,7 +1,7 @@
 /**
  * 
  */
-package rezend.ecomm.constants;
+package rezend.music.constants;
 
 /**
  * This class holds the regular expressions used to identify values and links

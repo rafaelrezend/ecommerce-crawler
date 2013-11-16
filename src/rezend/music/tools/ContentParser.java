@@ -1,12 +1,12 @@
 /**
  * 
  */
-package rezend.ecomm.tools;
+package rezend.music.tools;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import rezend.ecomm.constants.ErrorCodes;
+import rezend.music.constants.ErrorCodes;
 
 /**
  * This class is used to parse the content of a String using regular expression.
