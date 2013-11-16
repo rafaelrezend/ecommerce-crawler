@@ -1,7 +1,7 @@
 /**
  * 
  */
-package rezend.musix.crawler;
+package rezend.ecomm.crawler;
 
 import edu.uci.ics.crawler4j.crawler.Page;
 import edu.uci.ics.crawler4j.crawler.WebCrawler;
@@ -9,7 +9,7 @@ import edu.uci.ics.crawler4j.url.WebURL;
 
 import java.util.regex.Pattern;
 
-import rezend.musix.core.LinksList;
+import rezend.ecomm.core.LinksList;
 
 /**
  * This web crawler is a producer of product links. It writes links to a global

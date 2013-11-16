@@ -1,7 +1,7 @@
 /**
  * 
  */
-package rezend.musix.core;
+package rezend.ecomm.core;
 
 import java.util.LinkedList;
 

@@ -1,10 +1,10 @@
-package rezend.musix;
+package rezend.ecomm;
 
-import rezend.musix.core.ProductDAO;
-import rezend.musix.core.Product;
-import rezend.musix.core.LinksList;
-import rezend.musix.core.ProductParser;
-import rezend.musix.crawler.CrawlerControl;
+import rezend.ecomm.core.LinksList;
+import rezend.ecomm.core.Product;
+import rezend.ecomm.core.ProductDAO;
+import rezend.ecomm.core.ProductParser;
+import rezend.ecomm.crawler.CrawlerControl;
 
 /**
  * This application contains a web crawler that fetches every link from a

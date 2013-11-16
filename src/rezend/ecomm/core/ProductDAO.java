@@ -1,4 +1,4 @@
-package rezend.musix.core;
+package rezend.ecomm.core;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.DecimalFormat;
 
-import rezend.musix.constants.ErrorCodes;
+import rezend.ecomm.constants.ErrorCodes;
 
 /**
  * This class holds all transactions to the MySQL database, including the
