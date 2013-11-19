@@ -52,7 +52,7 @@ public class CrawlerControl {
 					pageFetcher, robotstxtServer);
 
 			// starting page
-			controller.addSeed("http://www.musik-produktiv.ch/");
+			controller.addSeed("http://rafaelrezend.github.io/");
 
 			/*
 			 * Start the crawl. This is a blocking operation, meaning that your
